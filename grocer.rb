@@ -1,5 +1,9 @@
 def consolidate_cart(cart:[])
   # code here
+  cart.uniq.each do |itemhash|
+    itemhash[:count] = cart.count(itemhash)
+  end
+  cart
 end
 
 def apply_coupons(cart:[], coupons:[])
